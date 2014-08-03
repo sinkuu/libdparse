@@ -2065,7 +2065,9 @@ class Formatter(Sink)
         Declaration[] declarations;
         **/
 
-        format(module_.moduleDeclaration);
+        if (module_.moduleDeclaration !is null)
+            format(module_.moduleDeclaration);
+
         foreach(decl; module_.declarations)
             format(decl);
     }
